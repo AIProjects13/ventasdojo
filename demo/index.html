@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; frame-src blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Demo interactiva de Dojo Manager con una academia de artes marciales de ejemplo.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Dojo Manager · Demo interactiva</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css?v=202611140439">
+  <link rel="stylesheet" href="css/demo.css?v=202611140439">
+  <script src="../js/frame-guard.js" defer></script>
+  <script src="js/entorno.js?v=202611140439" defer></script>
+  <script src="js/servicio.js?v=202611140439" defer></script>
+  <script src="js/escuela.js?v=202611140439" defer></script>
+  <script src="js/arranque.js?v=202611140439" defer></script>
+  <script src="js/antiframe.js?v=202611140439" defer></script>
+  <script src="js/config.js?v=202611140439" defer></script>
+  <script src="js/temas.js?v=202611140439" defer></script>
+  <script src="js/enlaces.js?v=202611140439" defer></script>
+  <script src="js/ui.js?v=202611140439" defer></script>
+  <script src="js/espera.js?v=202611140439" defer></script>
+  <script src="js/api.js?v=202611140439" defer></script>
+  <script src="js/auth.js?v=202611140439" defer></script>
+  <script src="js/acceso.js?v=202611140439" defer></script>
+  <script src="js/plataforma.js?v=202611140439" defer></script>
+  <script src="js/excel.js?v=202611140439" defer></script>
+  <script src="js/carga-excel.js?v=202611140439" defer></script>
+  <script src="js/graficos.js?v=202611140439" defer></script>
+  <script src="js/vistas/general.js?v=202611140439" defer></script>
+  <script src="js/vistas/admin-dojos.js?v=202611140439" defer></script>
+  <script src="js/vistas/admin.js?v=202611140439" defer></script>
+  <script src="js/vistas/tutor.js?v=202611140439" defer></script>
+  <script src="js/vistas/alumno.js?v=202611140439" defer></script>
+  <script src="js/vistas/dashboard.js?v=202611140439" defer></script>
+  <script src="js/vistas/ayuda.js?v=202611140439" defer></script>
+  <script src="js/app.js?v=202611140439" defer></script>
+  <script src="js/barra.js?v=202611140439" defer></script>
+</head>
+<body data-modo="acceso">
+  <div class="demo-bar" id="demoBar">
+    <span class="demo-tag">DEMO</span>
+    <span class="demo-txt">Academia de ejemplo · los cambios no se guardan</span>
+    <label class="demo-como"><span>Ver como</span>
+      <select id="demoComo" aria-label="Ver la demo como">
+        <option value="">Pantalla de ingreso</option>
+        <option value="admin-dojos">Dueño de la academia (varios dojos)</option>
+        <option value="admin">Administración del dojo</option>
+        <option value="tutor">Tutor</option>
+        <option value="alumno">Alumno</option>
+        <option value="encargado">Encargado de menores</option>
+        <option value="nuevo">Primer ingreso</option>
+      </select></label>
+    <span class="demo-sp"></span>
+    <button type="button" class="demo-reset" id="demoReset">Reiniciar</button>
+    <a class="demo-cta" id="demoCta" href="https://wa.me/50258253416" target="_blank" rel="noopener">Quiero Dojo Manager</a>
+  </div>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <div id="franja" role="status" hidden></div>
+  <header id="cabecera" hidden></header>
+  <nav id="menu" aria-label="Principal" hidden></nav>
+  <main id="contenido" tabindex="-1"><p class="cargando">Cargando…</p></main>
+  <footer class="pie">
+    <div>Powered by <a class="pixantech" href="https://www.pixantech.net" target="_blank" rel="noopener noreferrer"><b>Pixantech</b></a></div>
+  </footer>
+  <div id="avisos" aria-live="polite"></div>
+  <noscript><p class="cargando">Esta aplicación necesita JavaScript.</p></noscript>
+</body>
+</html>

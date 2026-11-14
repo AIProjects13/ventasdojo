@@ -1,0 +1,27 @@
+/* Dojo Manager · demo: barra superior y modo captura (los colores son los de la app) */
+:root { --demo-h: 46px; }
+body:not(.shot) { padding-top: var(--demo-h); }
+body:not(.shot) #franja { top: var(--demo-h); }
+.demo-bar {
+  position: fixed; inset: 0 0 auto 0; height: var(--demo-h); z-index: 90;
+  display: flex; align-items: center; gap: 12px; padding: 0 16px;
+  background: #17171a; color: #f4f4f5; border-bottom: 2px solid #c8161a;
+  font: 600 13px/1.2 system-ui, "Segoe UI", Arial, sans-serif;
+}
+.demo-tag { background: #c8161a; color: #fff; font-weight: 800; font-size: 11px; letter-spacing: .1em; padding: 4px 9px; }
+.demo-sp { flex: 1; }
+.demo-como { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.demo-como select { font: inherit; font-weight: 700; color: #0b0b0c; background: #f4f4f5; border: 0; padding: 5px 10px; cursor: pointer; max-width: 240px; }
+.demo-reset { all: unset; cursor: pointer; font-weight: 700; padding: 6px 10px; }
+.demo-reset:hover { background: rgba(255, 255, 255, .12); }
+.demo-cta { color: #fff; background: #c8161a; text-decoration: none; font-weight: 800; padding: 7px 14px; white-space: nowrap; }
+.demo-cta:hover { background: #e0251b; }
+.demo-como select:focus-visible, .demo-cta:focus-visible, .demo-reset:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.demo-pista { margin: 12px 0 0; padding: 10px 12px; background: #222226; border-left: 4px solid #ff5a4f; color: #f4f4f5; font-size: .88rem; line-height: 1.5; }
+@media (max-width: 1100px) { .demo-txt { display: none; } }
+@media (max-width: 560px) { .demo-como > span, .demo-reset { display: none; } .demo-bar { gap: 8px; padding: 0 10px; } .demo-como select { max-width: 160px; } }
+body.shot .demo-bar { display: none; }
+body.shot *, body.shot *::before, body.shot *::after { animation: none !important; transition: none !important; caret-color: transparent; }
+body.shot ::-webkit-scrollbar { display: none; }
+body.shot { scrollbar-width: none; }
+body.shot .espera { display: none !important; }

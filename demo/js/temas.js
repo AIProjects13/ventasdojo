@@ -1,0 +1,1 @@
+window.DOJO_TEMAS=Object.freeze({});

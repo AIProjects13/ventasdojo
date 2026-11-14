@@ -1,0 +1,1 @@
+window.DOJO_CONFIG=Object.freeze({API_URL:"demo:api",CUENTAS:Object.freeze({apiKey:"demo",authDomain:"demo",projectId:"demo",appId:"demo"})});

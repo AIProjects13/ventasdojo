@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Dojo Manager · Manual de uso</title>
+<meta name="description" content="Manual de uso de Dojo Manager: perfiles, permisos, cada pantalla, cada formulario campo por campo, cobros, recibos y reglas.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Dojo Manager · Manual de uso">
+<meta property="og:image" content="img/og.jpg">
+<link rel="stylesheet" href="css/landing.css?v=1">
+<link rel="stylesheet" href="css/manual.css?v=1">
+<script src="js/frame-guard.js"></script>
+<script src="js/manual.js?v=1" defer></script>
+</head>
+<body class="manual">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="index.html"><img src="img/favicon.svg" alt="" width="34" height="34"><span>Dojo Manager</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#demo">Demo</a>
+      <a href="#perfiles">Perfiles</a>
+      <a href="#formularios">Formularios</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <div class="hdr-act"><a class="btn btn-sm" data-wa href="https://wa.me/50258253416" target="_blank" rel="noopener">Pide tu demo</a></div>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="m-hero">
+  <div class="wrap">
+    <p class="kicker">Manual de uso</p>
+    <h1>Dojo Manager, paso a paso.</h1>
+    <p class="sub">Qué ve cada perfil, en qué pantalla se hace cada cosa, cómo se llena cada formulario, cómo se cobra y qué hace el sistema por ti. Las capturas son de la <a href="index.html#demo">demo</a>, con una academia de ejemplo: Academia Fénix, con dos dojos.</p>
+    <p class="en-note" lang="en">This user guide is in Spanish. <a href="index.html?lang=en">Go to the English site</a>.</p>
+    <ul class="m-perfiles" id="perfiles">
+      <li><a href="#p-duena"><b>Dueño de varios dojos</b><span>Crea sus dojos, ve el dashboard de todos y entra a cada uno.</span></a></li>
+      <li><a href="#p-admin"><b>Administración del dojo</b><span>Alumnos, clases, cobros, pagos, recibos y ajustes.</span></a></li>
+      <li><a href="#p-tutor"><b>Tutor</b><span>Su disponibilidad, sus clases y la asistencia.</span></a></li>
+      <li><a href="#p-alumno"><b>Alumno o encargado</b><span>Sus cobros, sus comprobantes, sus recibos y sus permisos.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap m-layout">
+<nav class="toc" aria-label="Índice del manual">
+  <p class="toc-t">Contenido</p>
+  <ol>
+    <li><a href="#organizacion">1. Cómo se organiza</a></li>
+    <li><a href="#niveles">2. Perfiles y permisos</a></li>
+    <li><a href="#entrar">3. Entrar</a></li>
+    <li><a href="#comun">4. Lo común a todas las pantallas</a></li>
+    <li><a href="#pantallas">5. Las pantallas</a></li>
+    <li><a href="#formularios">6. Formularios</a></li>
+    <li><a href="#calculos">7. Lo que se calcula solo</a></li>
+    <li><a href="#reglas">8. Reglas de cobro</a></li>
+    <li><a href="#dia">9. Paso a paso por perfil</a></li>
+    <li><a href="#planes">10. Planes</a></li>
+    <li><a href="#seguridad">11. Seguridad y privacidad</a></li>
+    <li><a href="#preguntas">12. Preguntas frecuentes</a></li>
+  </ol>
+</nav>
+
+<div class="doc">
+<section id="organizacion">
+  <h2><span>1</span>Cómo se organiza la información</h2>
+  <p>Todo cuelga de tu academia. Cada dojo lleva su propia administración, sus alumnos, sus planes, sus cobros y sus recibos, aunque el dueño los vea todos juntos.</p>
+  <ol class="cadena">
+    <li><b>Academia</b><span>El grupo de dojos de un mismo dueño.</span></li>
+    <li><b>Dojo</b><span>Cada sede, con su plan, su administración y su numeración de recibos.</span></li>
+    <li><b>Disciplinas y clases</b><span>Jiu jitsu, karate, box… y sus clases con día, horario, cupo y tutor.</span></li>
+    <li><b>Alumnos</b><span>Cada uno con su plan del dojo y su titular, que es quien paga.</span></li>
+    <li class="hoja"><b>Cobros, pagos y recibos</b><span>Las mensualidades, los depósitos que las cubren y el recibo de cada pago confirmado.</span></li>
+  </ol>
+  <dl class="glosario">
+    <dt>Titular</dt><dd>La cuenta que ve y paga los cobros de una ficha. Un adulto suele ser su propio titular; un menor tiene de titular a su encargado.</dd>
+    <dt>Encargado</dt><dd>Persona mayor de edad a cargo de uno o varios menores. Con un solo ingreso ve los cobros de todos.</dd>
+    <dt>Plan del dojo</dt><dd>Lo que el dojo le cobra al alumno: por ejemplo "2 días por semana" a un precio mensual. Lo define cada dojo.</dd>
+    <dt>Plan de la plataforma</dt><dd>Básico, Pro o Premium: qué herramientas tiene el dojo (capítulo 10).</dd>
+    <dt>Comprobante</dt><dd>La foto o PDF de la boleta de depósito que sube el alumno.</dd>
+    <dt>Credencial pausada</dt><dd>Un alumno con atraso mayor al permitido: solo puede ver sus cobros, sus recibos y subir su comprobante.</dd>
+  </dl>
+</section>
+
+<section id="niveles">
+  <h2><span>2</span>Perfiles y permisos</h2>
+  <div class="perfil" id="p-duena"><h3>Dueño de varios dojos</h3><p>Crea sus dojos, nombra a la administración de cada uno, ve el dashboard de todos juntos y puede entrar a cualquier dojo para ver o corregir lo mismo que su administración.</p></div>
+  <div class="perfil" id="p-admin"><h3>Administración del dojo</h3><p>Lleva el día a día: inscribe alumnos, arma las clases y los planes, confirma pagos, emite y anula recibos, manda avisos de cobro y ajusta las reglas del dojo.</p></div>
+  <div class="perfil" id="p-tutor"><h3>Tutor</h3><p>Marca su disponibilidad, ve sus clases y toma la asistencia de sus alumnos.</p></div>
+  <div class="perfil" id="p-alumno"><h3>Alumno o encargado</h3><p>Ve lo que debe, sube sus comprobantes, descarga sus recibos y decide sobre sus permisos de promociones e imagen. Un encargado lo ve para todos sus menores.</p></div>
+  <h3>Qué puede hacer cada uno</h3>
+  <p>Esta tabla sale directamente de las reglas del sistema. Algunas acciones además dependen del plan del dojo.</p>
+  <div class="tabla-wrap"><table><thead><tr><th>Qué se puede hacer</th><th>Dueño de varios dojos</th><th>Administración del dojo</th><th>Tutor</th><th>Alumno o encargado</th></tr></thead><tbody><tr class="grupo"><td colspan="5">Cuentas</td></tr><tr><td>Cambiar su contraseña</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Crear cuentas con clave temporal</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver al personal con acceso</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Quitar el acceso a una persona</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Pagos</td></tr><tr><td>Ver la imagen de un comprobante</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Confirmar un pago (emite el recibo)</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Rechazar un pago con motivo</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Registrar un pago en efectivo</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver los pagos de los alumnos</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Subir el comprobante de su depósito</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr class="grupo"><td colspan="5">Dojos</td></tr><tr><td>Crear un dojo nuevo</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver sus dojos con su plan y estado</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Cuenta con la plataforma</td></tr><tr><td>Ver lo que debe cada dojo a la plataforma</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Subir el comprobante del pago a la plataforma</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Recibos</td></tr><tr><td>Ver recibos</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Descargar un recibo en PDF</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Anular un recibo con motivo</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Privacidad</td></tr><tr><td>Leer el aviso de privacidad</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Aceptar el aviso de privacidad</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Retirar un permiso (promociones o imagen)</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Dar un permiso</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Poner los datos del dojo en el aviso</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Descargar sus propios datos</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Corregir su nombre y teléfono</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr class="grupo"><td colspan="5">Alumnos</td></tr><tr><td>Inscribir un alumno</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Corregir la ficha de un alumno</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Congelar, dar de baja o reactivar</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver la lista de alumnos</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Abrir la ficha de un alumno</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Ver alertas (por ejemplo, un menor que cumple 18)</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Tutores</td></tr><tr><td>Dar de alta a un tutor</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver a los tutores</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Marcar su disponibilidad</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td></tr><tr><td>Ver la disponibilidad</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td></tr><tr><td>Asignar el tutor de una clase</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Clases</td></tr><tr><td>Crear o editar disciplinas</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Crear o editar clases</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver las clases</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Inscribir a un alumno en una clase</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Sacar a un alumno de una clase</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver los inscritos de una clase</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Asistencia</td></tr><tr><td>Tomar asistencia</td><td class="c no">—</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td></tr><tr><td>Ver la asistencia</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr class="grupo"><td colspan="5">Ajustes</td></tr><tr><td>Ver los ajustes del dojo</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Cambiar los ajustes del dojo</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Crear o editar los planes del dojo</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver los planes del dojo</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Cobros</td></tr><tr><td>Generar las mensualidades del mes</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Agregar un cobro único (examen, uniforme…)</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Aplicar un descuento con motivo</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver los cobros de los alumnos</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver lo que debe</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Ver a los atrasados y pausados</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Avisos</td></tr><tr><td>Ver las plantillas de mensajes</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Editar una plantilla</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Preparar un aviso de cobro o recordatorio</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Anotar que el aviso se envió</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr class="grupo"><td colspan="5">Dashboard</td></tr><tr><td>Ver el dashboard del dojo o de sus dojos</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver los pagos detrás de una cifra</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Descargar los datos en Excel</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Actualizar los resúmenes</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr><tr><td>Ver su propio resumen</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Ver el resumen de sus clases</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td></tr></tbody></table></div>
+</section>
+
+<section id="entrar">
+  <h2><span>3</span>Entrar</h2>
+  <p>Nadie se registra solo: la administración crea cada cuenta y el sistema muestra <b>una clave temporal una sola vez</b>, para entregarla en persona.</p>
+  <ol class="pasos">
+    <li>Abre la dirección del sistema. Si tu dojo tiene su propia página, el botón "Entrar" te lleva con el logo y los colores del dojo.</li>
+    <li>Escribe tu correo y la clave. El botón del ojo muestra u oculta lo que escribes.</li>
+    <li>La primera vez, crea tu contraseña: de 10 a 128 caracteres, con letras y números, sin tu correo.</li>
+    <li>Si eres alumno o encargado, lee y acepta el aviso de privacidad. Ahí mismo decides si aceptas promociones y el uso de fotos o videos.</li>
+    <li>¿Olvidaste tu contraseña? Toca "¿Olvidaste tu contraseña?" y te llega un correo para crear una nueva.</li>
+  </ol>
+  <div class="duo-shots">
+    <figure class="shot"><img src="img/shots/ingreso.jpg" alt="Pantalla de ingreso" loading="lazy" width="1600" height="1000"><figcaption>Ingreso con correo y contraseña.</figcaption></figure>
+    <figure class="shot"><img src="img/shots/primer-ingreso.jpg" alt="Crear la contraseña propia" loading="lazy" width="1600" height="1000"><figcaption>Primer ingreso: la clave temporal se cambia por una propia.</figcaption></figure>
+  </div>
+</section>
+
+<section id="comun">
+  <h2><span>4</span>Lo común a todas las pantallas</h2>
+  <ul class="notas">
+    <li><b>Menú por grupos:</b> Resumen, Mi dojo, Cobros a alumnos, Mi cuenta, Ajustes y Ayuda. Cada perfil ve solo lo suyo.</li>
+    <li><b>Celular:</b> el menú se abre con el botón "Menú". Todo funciona igual en el celular.</li>
+    <li><b>Espera con consejos:</b> si el sistema tarda, aparece una animación con consejos para tu perfil.</li>
+    <li><b>Ayuda:</b> el manual de tu perfil está siempre en el menú, dentro de la app.</li>
+    <li><b>Tablas:</b> se filtran por estado y se buscan por nombre.</li>
+  </ul>
+  <div class="duo-shots">
+    <figure class="shot"><img src="img/shots/inicio-admin.jpg" alt="Inicio de la administración" loading="lazy" width="1600" height="1000"><figcaption>Inicio con accesos a cada herramienta.</figcaption></figure>
+    <figure class="shot movil"><img src="img/shots/cel-menu.jpg" alt="Menú en el celular" loading="lazy" width="780" height="1688"><figcaption>El menú en el celular.</figcaption></figure>
+  </div>
+</section>
+
+<section id="pantallas">
+  <h2><span>5</span>Las pantallas, una por una</h2>
+
+  <div class="pantalla"><h3>Mis dojos <small>Dueño</small></h3>
+  <p>Cada dojo con su plan y su estado. En "Administrar un dojo" tocas la tarjeta de un dojo y ves quién lo administra, sus tutores y accesos a sus alumnos, clases, pagos y ajustes. Al final está "Crear un dojo".</p>
+  <figure class="shot"><img src="img/shots/panel-dojo.jpg" alt="Mis dojos con el panel de un dojo" loading="lazy" width="1600" height="1000"><figcaption>El panel de un dojo, con su equipo.</figcaption></figure></div>
+
+  <div class="pantalla"><h3>Dashboard <small>Dueño, administración, tutor y alumno</small></h3>
+  <p>Para la administración y el dueño: lo esperado, lo cobrado y confirmado, lo que está por confirmar, el saldo a favor y lo vencido del mes, con filtros por dojo y por disciplina, y comparación contra el mes anterior o el mismo mes del año pasado. Toca una cifra para ver los pagos que la forman, o descarga los datos en Excel. El tutor ve la ocupación y la asistencia de sus clases; el alumno, su propio resumen.</p>
+  <figure class="shot"><img src="img/shots/dashboard.jpg" alt="Dashboard del dojo" loading="lazy" width="1600" height="1000"><figcaption>Dashboard con comparativos y filtros.</figcaption></figure></div>
+
+  <div class="pantalla"><h3>Alumnos <small>Administración</small></h3>
+  <p>La lista con el plan, el titular y el estado de cada alumno (activo, pausado por atraso, congelado o de baja). "Nuevo alumno" abre el alta; "Abrir ficha" muestra sus datos, sus cobros, sus pagos y su historial. Arriba se puede cargar a muchos con Excel.</p>
+  <div class="duo-shots">
+    <figure class="shot"><img src="img/shots/alumnos.jpg" alt="Lista de alumnos" loading="lazy" width="1600" height="1000"><figcaption>La lista de alumnos.</figcaption></figure>
+    <figure class="shot"><img src="img/shots/ficha.jpg" alt="Ficha de un alumno" loading="lazy" width="1600" height="1000"><figcaption>La ficha de un alumno.</figcaption></figure>
+  </div>
+  <p class="afecta"><b>Qué cambia:</b> crear una ficha la deja lista para generar sus cobros desde su fecha de ingreso; cambiar el plan aplica desde el siguiente periodo y lo ya cobrado no cambia.</p></div>
+
+  <div class="pantalla"><h3>Cuentas y tutores <small>Administración</small></h3>
+  <p>En "Cuentas" se crea el acceso de cada persona (alumno, encargado o tutor) y se ve al personal con acceso. Al crear una cuenta, la clave temporal aparece una sola vez. Quitar el acceso no borra nada: queda en la bitácora.</p>
+  <figure class="shot"><img src="img/shots/cuentas.jpg" alt="Crear cuentas" loading="lazy" width="1600" height="1000"><figcaption>Crear una cuenta.</figcaption></figure></div>
+
+  <div class="pantalla"><h3>Clases y planes del dojo <small>Administración</small></h3>
+  <p>En "Clases" se crean disciplinas y clases con día, horario, cupo (hasta 999 lugares) y tutor; ahí mismo se inscribe a los alumnos. En "Planes del dojo" se definen los planes con sus días por semana y su precio mensual.</p>
+  <div class="duo-shots">
+    <figure class="shot"><img src="img/shots/clases.jpg" alt="Clases del dojo" loading="lazy" width="1600" height="1000"><figcaption>Clases con su ocupación.</figcaption></figure>
+    <figure class="shot"><img src="img/shots/planes.jpg" alt="Planes del dojo" loading="lazy" width="1600" height="1000"><figcaption>Los planes que el dojo cobra.</figcaption></figure>
+  </div></div>
+
+  <div class="pantalla"><h3>Pagos de alumnos <small>Administración</small></h3>
+  <p>"Generar cobros" crea las mensualidades del periodo según el plan de cada alumno. Abajo aparecen los comprobantes por confirmar, con lo que debe cada titular. "Ver comprobante" abre la imagen; "Confirmar" aplica el pago y emite el recibo; "Rechazar" pide un motivo que el alumno ve. Aquí también se registra un pago en efectivo, un cobro único o un descuento.</p>
+  <figure class="shot"><img src="img/shots/pagos.jpg" alt="Comprobantes por confirmar" loading="lazy" width="1600" height="1000"><figcaption>Comprobantes por confirmar.</figcaption></figure></div>
+
+  <div class="pantalla"><h3>Recibos <small>Administración, dueño y alumno</small></h3>
+  <p>Todos los recibos del dojo, numerados. Se descargan en PDF. Un recibo equivocado se anula con un motivo y se emite otro; nunca se borra.</p>
+  <figure class="shot"><img src="img/shots/recibos.jpg" alt="Recibos del dojo" loading="lazy" width="1600" height="1000"><figcaption>Los recibos del dojo.</figcaption></figure></div>
+
+  <div class="pantalla"><h3>Avisos y plantillas, Suspendidos <small>Administración</small></h3>
+  <p>"Suspendidos" muestra a quién se le pausó la credencial y cuántos días lleva de atraso. "Avisos y plantillas" prepara el mensaje con el desglose ya calculado y lo abre en WhatsApp o en el correo; al enviarlo se anota.</p>
+  <div class="duo-shots">
+    <figure class="shot"><img src="img/shots/suspendidos.jpg" alt="Suspendidos" loading="lazy" width="1600" height="1000"><figcaption>Atrasados y pausados.</figcaption></figure>
+    <figure class="shot"><img src="img/shots/plantillas.jpg" alt="Avisos y plantillas" loading="lazy" width="1600" height="1000"><figcaption>Preparar un aviso.</figcaption></figure>
+  </div></div>
+
+  <div class="pantalla"><h3>Disponibilidad y asistencia <small>Tutor</small></h3>
+  <p>El tutor marca los días y horas en que puede dar clase. En "Asistencia" elige la clase y la fecha, marca presente o ausente con un toque por alumno y guarda.</p>
+  <div class="duo-shots">
+    <figure class="shot"><img src="img/shots/disponibilidad.jpg" alt="Disponibilidad del tutor" loading="lazy" width="1600" height="1000"><figcaption>Disponibilidad por día.</figcaption></figure>
+    <figure class="shot movil"><img src="img/shots/cel-asistencia.jpg" alt="Asistencia en el celular" loading="lazy" width="780" height="1688"><figcaption>Asistencia desde el celular.</figcaption></figure>
+  </div></div>
+
+  <div class="pantalla"><h3>Mis cobros, subir comprobante, recibos y permisos <small>Alumno o encargado</small></h3>
+  <p>"Mis cobros" muestra cada mes con su monto, fecha límite y saldo; un encargado cambia entre sus menores o ve el total. "Subir comprobante" recibe la foto o el PDF del depósito. "Recibos" guarda cada recibo, descargable aunque haya atraso. "Mis permisos" da o retira el permiso de promociones y de imagen; "Mis datos" descarga su información.</p>
+  <div class="duo-shots tres">
+    <figure class="shot movil"><img src="img/shots/cel-cobros.jpg" alt="Mis cobros en el celular" loading="lazy" width="780" height="1688"><figcaption>Lo que debe un encargado.</figcaption></figure>
+    <figure class="shot movil"><img src="img/shots/cel-comprobante.jpg" alt="Subir comprobante en el celular" loading="lazy" width="780" height="1688"><figcaption>Subir el comprobante.</figcaption></figure>
+    <figure class="shot"><img src="img/shots/permisos.jpg" alt="Mis permisos" loading="lazy" width="1600" height="1000"><figcaption>Permisos sobre sus datos.</figcaption></figure>
+  </div></div>
+</section>
+
+<section id="formularios">
+  <h2><span>6</span>Formularios, campo por campo</h2>
+  <div class="form"><h3>Nuevo alumno</h3>
+  <div class="tabla-wrap"><table class="campos"><thead><tr><th>Campo</th><th>Qué escribir</th><th>Obligatorio</th></tr></thead><tbody>
+    <tr><td><b>Cuenta del titular</b></td><td>Quien recibe los cobros. Elige una cuenta del dojo o "Otra persona" para crearla o buscarla por correo.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Nombre del alumno</b></td><td>Nombre completo, hasta 120 caracteres.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Fecha de nacimiento</b></td><td>Define si es menor de edad.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Fecha de ingreso</b></td><td>Si la dejas vacía, es hoy.</td><td>No</td></tr>
+    <tr><td><b>Plan</b></td><td>Un plan del dojo, o "Sin plan por ahora" (no se le cobra).</td><td>No</td></tr>
+    <tr><td><b>Es una persona adulta y entra con esa misma cuenta</b></td><td>Márcalo si el alumno es mayor y usa su propia cuenta.</td><td>No</td></tr>
+    <tr><td><b>Fecha de nacimiento del encargado</b></td><td>Para un menor: confirma que el encargado es mayor de edad. No se guarda.</td><td>Para menores</td></tr>
+  </tbody></table></div></div>
+  <div class="form"><h3>Clase</h3>
+  <div class="tabla-wrap"><table class="campos"><thead><tr><th>Campo</th><th>Qué escribir</th><th>Obligatorio</th></tr></thead><tbody>
+    <tr><td><b>Disciplina</b></td><td>Una de las disciplinas del dojo.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Día, hora de inicio y de fin</b></td><td>Cuándo se da la clase.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Cupo (lugares)</b></td><td>Número entero de 1 a 999. No se inscribe por encima.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Tutor</b></td><td>Quien la da. Si el dojo usa disponibilidad, debe estar libre todo el horario.</td><td>No</td></tr>
+  </tbody></table></div></div>
+  <div class="form"><h3>Plan del dojo</h3>
+  <div class="tabla-wrap"><table class="campos"><thead><tr><th>Campo</th><th>Qué escribir</th><th>Obligatorio</th></tr></thead><tbody>
+    <tr><td><b>Nombre del plan</b></td><td>Por ejemplo "2 días por semana".</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Días por semana</b></td><td>Cuántos días entrena, o libre.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Precio al mes (Q)</b></td><td>Lo que se cobra cada mes.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Disciplina</b></td><td>Si el plan es solo de una disciplina; si no, "Todas".</td><td>No</td></tr>
+  </tbody></table></div></div>
+  <div class="form"><h3>Subir comprobante</h3>
+  <div class="tabla-wrap"><table class="campos"><thead><tr><th>Campo</th><th>Qué escribir</th><th>Obligatorio</th></tr></thead><tbody>
+    <tr><td><b>Monto que depositaste (Q)</b></td><td>El total de la boleta.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>A qué cobros se aplica</b></td><td>"Automático" cubre primero lo más antiguo; "Elegir cobros" te deja escoger.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Comprobante</b></td><td>Foto JPG o PNG, o PDF, hasta 5 MB.</td><td><span class="pill req">Sí</span></td></tr>
+  </tbody></table></div></div>
+  <div class="form"><h3>Cobro único y descuento</h3>
+  <div class="tabla-wrap"><table class="campos"><thead><tr><th>Campo</th><th>Qué escribir</th><th>Obligatorio</th></tr></thead><tbody>
+    <tr><td><b>Concepto</b></td><td>Por ejemplo: Inscripción, Examen de cinta, Uniforme.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Monto (Q)</b></td><td>Lo que se cobra.</td><td><span class="pill req">Sí</span></td></tr>
+    <tr><td><b>Pagar antes del</b></td><td>Si la dejas vacía, se usan los días de plazo del dojo.</td><td>No</td></tr>
+    <tr><td><b>Descuento (Q) y motivo</b></td><td>Beca, hermano, ajuste… El motivo queda en la bitácora.</td><td><span class="pill req">Sí</span></td></tr>
+  </tbody></table></div></div>
+  <div class="form"><h3>Ajustes del dojo</h3><div class="tabla-wrap"><table class="campos"><thead><tr><th>Ajuste</th><th>Qué hace</th><th>Valores</th><th>Si no se cambia</th></tr></thead><tbody><tr><td><b>Cuándo se cobra</b></td><td>Por adelantado (la mensualidad se cobra al empezar el mes) o a mes vencido (al terminarlo).</td><td>Adelantado o vencido</td><td>Por adelantado</td></tr><tr><td><b>Días de plazo para pagar</b></td><td>Cuántos días después de emitido el cobro vence la fecha de pago.</td><td>De 0 a 30</td><td>5</td></tr><tr><td><b>Días de atraso para pausar</b></td><td>Pasados estos días de atraso, la credencial del alumno se pausa sola hasta que suba su comprobante.</td><td>De 1 a 60</td><td>7</td></tr><tr><td><b>Clases seguidas sin venir para avisar</b></td><td>Cuántas ausencias seguidas hacen que el alumno aparezca en el aviso de ausencias.</td><td>De 1 a 20</td><td>2</td></tr></tbody></table></div></div>
+  <div class="form"><h3>Carga por Excel</h3>
+  <p>En Alumnos o Tutores, abre "Cargar varios … con Excel" y descarga la plantilla, que trae una hoja de instrucciones. Antes de crear cualquier cuenta se revisan el plan, las fechas y la fecha del encargado de cada fila: una fila con error no deja nada a medias. Al terminar se descarga una sola vez un Excel con cada correo, su clave temporal y el resultado de cada fila. Varios menores pueden compartir el mismo correo de encargado.</p></div>
+</section>
+
+<section id="calculos">
+  <h2><span>7</span>Lo que se calcula solo</h2>
+  <ul class="notas">
+    <li><b>Mensualidades:</b> salen del precio del plan de cada alumno, una por periodo, con su fecha de pago. <i>Ejemplo: plan "2 días por semana" a Q300 con 5 días de plazo → cobro de Q300 que vence el día 5.</i></li>
+    <li><b>Aplicación de un pago:</b> en automático cubre primero los cobros más antiguos. <i>Ejemplo: un encargado deposita Q600 con dos menores que deben Q300 cada uno → quedan los dos al día.</i></li>
+    <li><b>Saldo a favor:</b> lo que sobra de un depósito queda a favor del titular para el siguiente cobro.</li>
+    <li><b>Días de atraso y pausa:</b> se cuentan desde la fecha de pago; al pasar los días configurados, la credencial se pausa sola. Al subir un comprobante por todo lo vencido vuelve a operar mientras se revisa.</li>
+    <li><b>Recibos:</b> número correlativo por dojo, generado al confirmar el pago.</li>
+    <li><b>Dashboard:</b> esperado, cobrado, por confirmar, saldo a favor y vencido del mes, y su variación contra el mes anterior o el mismo mes del año pasado.</li>
+    <li><b>Mayoría de edad:</b> cuando un menor cumple 18 años aparece una alerta para pasarlo a su propia cuenta.</li>
+  </ul>
+</section>
+
+<section id="reglas">
+  <h2><span>8</span>Reglas de cobro</h2>
+  <ul class="reglas">
+    <li>Un menor siempre tiene un encargado mayor de edad.</li>
+    <li>Rechazar un pago o anular un recibo exige un motivo, que queda escrito.</li>
+    <li>Un recibo nunca se borra; se anula y se emite otro.</li>
+    <li>El alumno pausado sigue pudiendo ver sus cobros, sus recibos, subir su comprobante y manejar sus permisos.</li>
+    <li>Cambiar el plan de un alumno aplica desde el siguiente periodo.</li>
+    <li>No se puede inscribir a una clase por encima de su cupo.</li>
+  </ul>
+</section>
+
+<section id="dia">
+  <h2><span>9</span>Paso a paso por perfil</h2>
+  <h3>Administración: el inicio de mes</h3>
+  <ol class="pasos"><li>Entra a "Pagos de alumnos" y toca "Generar cobros del mes".</li><li>Revisa los comprobantes que van llegando y confírmalos; el recibo sale solo.</li><li>Registra los pagos en efectivo.</li><li>Pasado el plazo, entra a "Suspendidos" y manda los avisos desde "Avisos y plantillas".</li><li>Revisa el dashboard para ver cuánto falta por cobrar.</li></ol>
+  <h3>Tutor: el día de clase</h3>
+  <ol class="pasos"><li>Entra desde el celular a "Asistencia".</li><li>Elige la clase y la fecha.</li><li>Marca presente o ausente con un toque por alumno y guarda.</li></ol>
+  <h3>Alumno o encargado: pagar el mes</h3>
+  <ol class="pasos"><li>Mira en "Mis cobros" cuánto debes y la fecha límite.</li><li>Haz tu depósito en el banco.</li><li>En "Subir comprobante" escribe el monto y sube la foto de la boleta.</li><li>Cuando el dojo lo confirme, tu recibo aparece en "Recibos".</li></ol>
+  <h3>Dueño: abrir un dojo nuevo</h3>
+  <ol class="pasos"><li>En "Mis dojos", llena "Crear un dojo" con el nombre y el plan.</li><li>Entra al dojo y crea a su administración con "Crear administrador o tutor".</li><li>Entrega la clave temporal en persona.</li></ol>
+</section>
+
+<section id="planes">
+  <h2><span>10</span>Planes</h2>
+  <p>Cada dojo tiene su plan. Esta tabla sale de la definición de planes del sistema.</p>
+  <div class="tabla-wrap"><table><thead><tr><th>Herramienta</th><th>Básico</th><th>Pro</th><th>Premium</th></tr></thead><tbody><tr><td>Alumnos, encargados, cobros, comprobantes y recibos</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Disciplinas y clases con horario, cupo y tutor</td><td class="c si">Sí</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Toma de asistencia por clase</td><td class="c no">—</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Disponibilidad de los tutores</td><td class="c no">—</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Avisos y plantillas de mensajes</td><td class="c no">—</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Dashboard con comparativos</td><td class="c no">—</td><td class="c si">Sí</td><td class="c si">Sí</td></tr><tr><td>Seguimiento de atrasados y pausados</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Aviso de ausencias seguidas</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Carga y descarga por Excel</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr><tr><td>Página propia del dojo</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr></tbody></table></div>
+  <p>Todos los planes incluyen el acceso por celular, la bitácora de cambios, el aviso de privacidad y el manual dentro de la app. El precio depende del alcance y se entrega por escrito.</p>
+</section>
+
+<section id="seguridad">
+  <h2><span>11</span>Seguridad y privacidad</h2>
+  <ul class="notas">
+    <li>Solo la administración crea cuentas; la clave temporal se ve una sola vez y se cambia al entrar.</li>
+    <li>Cada persona ve solo su dojo y lo que su perfil permite; un alumno ve solo lo suyo y lo de sus menores.</li>
+    <li>Cada cambio queda en una bitácora con autor, fecha y hora, encadenada para que no se pueda alterar sin que se note.</li>
+    <li>Los datos de cada fila llevan una firma que detecta cambios hechos por fuera del sistema.</li>
+    <li>El alumno acepta el aviso de privacidad, decide sobre promociones y uso de su imagen, y descarga sus datos cuando quiera.</li>
+  </ul>
+</section>
+
+<section id="preguntas">
+  <h2><span>12</span>Preguntas frecuentes</h2>
+  <h4>Un alumno tiene cuenta pero no aparece en Alumnos.</h4><p>La cuenta da acceso; la ficha lo inscribe. Crea su ficha en Alumnos > Nuevo alumno y elige su cuenta como titular.</p>
+  <h4>Un alumno depositó de más.</h4><p>Lo que sobra queda como saldo a favor y se aplica al siguiente cobro.</p>
+  <h4>Me equivoqué en un recibo.</h4><p>Anúlalo con un motivo y emite el correcto. El anulado queda en el historial.</p>
+  <h4>Un encargado tiene tres hijos en el dojo.</h4><p>Los tres van con su cuenta como titular: ve un solo total y puede pagarlos con un solo depósito.</p>
+  <h4>¿Puedo cambiar los días de gracia?</h4><p>Sí, en "Ajustes del dojo".</p>
+</section>
+
+<div class="m-final">
+  <h2>¿Lo quieres para tu dojo?</h2>
+  <p>Prueba la <a href="index.html#demo">demo</a> o escríbenos y te lo mostramos con tus disciplinas y tus planes.</p>
+  <a class="btn" data-wa href="https://wa.me/50258253416" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <a class="logo" href="index.html"><img src="img/favicon.svg" alt="" width="28" height="28"><span>Dojo Manager</span></a>
+    <p>Un producto de <a href="https://www.pixantech.net" target="_blank" rel="noopener">Pixantech</a> · © <span id="year">2026</span></p>
+  </div>
+</footer>
+</body>
+</html>
